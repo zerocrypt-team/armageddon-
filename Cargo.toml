@@ -1,0 +1,54 @@
+[package]
+name = "armageddon"
+version = "1.0.0"
+edition = "2021"
+description = "Ultimate DPI Evasion Framework by Team ZeroCrypt"
+authors = ["Team ZeroCrypt"]
+license = "MIT"
+
+[dependencies]
+anyhow = "1.0"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+log = "0.4"
+env_logger = "0.11"
+socket2 = "0.5"
+pnet = "0.34"
+etherparse = "0.14"
+rand = "0.8"
+colored = "2"
+libc = "0.2"
+nix = "0.29"
+clap = { version = "4", features = ["derive"] }
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["v4"] }
+async-trait = "0.1"
+tokio-tungstenite = { version = "0.21", features = ["native-tls"] }
+tokio-util = { version = "0.7", features = ["io"] }
+aes-gcm = "0.10"
+sha2 = "0.10"
+hkdf = "0.12"
+url = "2"
+ratatui = "0.26"
+crossterm = "0.27"
+dirs-next = "2.0"
+egui = "0.27"
+eframe = "0.27"
+egui_plot = "0.27"
+futures = "0.3"
+pcap-file = "1.1"
+wasmtime = "17"
+tun = "0.5"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+nfqueue = "0.8"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windivert = "0.3"
+windows-sys = { version = "0.52", features = ["Win32_Foundation", "Win32_NetworkManagement_IpHelper", "Win32_Networking_WinSock", "Win32_Security", "Win32_System_Threading", "Win32_System_Diagnostics_ToolHelp"] }
+
+[dev-dependencies]
+tokio-test = "0.4"
+pretty_assertions = "1.4"2_Security", "Win32_System_Threading", "Win32_System_Diagnostics_ToolHelp"] }
